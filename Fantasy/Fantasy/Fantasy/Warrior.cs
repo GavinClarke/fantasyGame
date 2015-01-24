@@ -15,12 +15,15 @@ namespace Fantasy
     class Warrior
     {
         int attackStr = 20;
-        int health = 30;
+        public int health = 30;
         Vector2 position;
         Texture2D image;
+        SpriteFont font;
 
-        public Warrior()
+        public Warrior(ContentManager content)
         {
+            font = content.Load<SpriteFont>("SpriteFont1");
+            position = new Vector2(0, 300);
         }
 
         public int Attack()
@@ -32,9 +35,22 @@ namespace Fantasy
             return attack;
         }
 
+        public void Damage(int damage)
+        {
+            if (health > 0)
+            {
+                health -= damage;
+            }
+            else
+            {
+                health = 0;
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, position, Color.White);
+            //spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, position, Color.Green);
         }
     }
 }

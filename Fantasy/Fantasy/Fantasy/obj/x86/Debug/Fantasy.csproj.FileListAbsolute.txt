@@ -10,3 +10,4 @@ C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.csp
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.exe
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\SpriteFont1.xnb

@@ -17,22 +17,26 @@ namespace Fantasy
         Warrior warrior;
         Wizard wizard;
         Enemy enemy;
-
+        SpriteFont font;
+        Vector2 position;
+        string current = "Wizard attack";
         enum attacks
         {
             warrior,
             wizard,
             enemy,
         }
-
+        float timer = 0.0f;
         attacks attackOrder;
 
         public Combat(ContentManager content)
         {
             attackOrder = attacks.wizard;
-            wizard = new Wizard();
-            enemy = new Enemy();
-            warrior = new Warrior();
+            wizard = new Wizard(content);
+            enemy = new Enemy(content);
+            warrior = new Warrior(content);
+            font = content.Load<SpriteFont>("SpriteFont1");
+            position = new Vector2(350,0);
         }
 
         public void Update(GameTime gameTime)
@@ -44,19 +48,53 @@ namespace Fantasy
                 {
                     attackOrder = attacks.warrior;
                     enemy.Damage((int)(damage.X));
+                    warrior.health += (int)damage.Y;
+                    wizard.health += (int)damage.Y;
                 }
-                
+
+                current = "Wizard attack";
+
             }
             if (attacks.warrior == attackOrder)
             {
-                enemy.RoleDefence(warrior.Attack());
-                attackOrder = attacks.enemy;
+                float t = gameTime.ElapsedGameTime.Milliseconds;
+                timer += t / 1000.0f;
+
+                if (timer > 6)
+                {
+                    enemy.RoleDefence(warrior.Attack());
+                    attackOrder = attacks.enemy;
+                    timer = 0;
+                }
+
+                current = "Warrior attack";
+
+            }
+            if (attacks.enemy == attackOrder)
+            {
+                float t = gameTime.ElapsedGameTime.Milliseconds;
+                timer += t / 1000.0f;
+
+                if (timer > 6)
+                {
+                    Vector2 result = enemy.Attack();
+                    warrior.Damage((int)result.X);
+                    wizard.Damage((int)result.Y);
+                    attackOrder = attacks.wizard;
+                    
+                }
+
+                current = "Enemy attack";
+
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            enemy.Draw(spriteBatch);
+            warrior.Draw(spriteBatch);
+            wizard.Draw(spriteBatch);
+            spriteBatch.DrawString(font, current, position, Color.Green);
         }
     }
 }

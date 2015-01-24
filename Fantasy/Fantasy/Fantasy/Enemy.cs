@@ -19,23 +19,40 @@ namespace Fantasy
         int health = 40;
         Vector2 position;
         Texture2D image;
+        SpriteFont font;
 
-        public Enemy()
+        public Enemy(ContentManager content)
         {
+            font = content.Load<SpriteFont>("SpriteFont1");
+            position = new Vector2(600, 300);
         }
 
-        public int Attack()
+        public Vector2  Attack()
         {
             Random num = new Random();
-
+            Vector2 result = new Vector2(0, 0);
             int attack = num.Next(1, attackStr);
-
-            return attack;
+            if ((attack % 2) == 0)
+            {
+                result = new Vector2(attack / 2, attack / 2);
+            }
+            else
+            {
+                result = new Vector2((float)(Math.Floor((float)(attack / 2)) + 1), (float)(Math.Floor((float)(attack / 2))));
+            }
+            return result;
         }
 
         public void Damage(int damage)
         {
-            health -= damage;
+            if (health > 0)
+            {
+                health -= damage;
+            }
+            else
+            {
+                health = 0;
+            }
         }
 
         public void RoleDefence(int damage)
@@ -52,7 +69,8 @@ namespace Fantasy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, position, Color.White);
+            //spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, position, Color.Red);
         }
 
 

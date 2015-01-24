@@ -114,6 +114,7 @@ namespace Fantasy
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
+            spriteBatch.Begin();
             switch (gameMode)
             {
                 case MAINMENU:
@@ -126,6 +127,7 @@ namespace Fantasy
                     DrawFighting();
                     break;
             }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
         ///////////////////////////////

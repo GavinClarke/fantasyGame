@@ -15,7 +15,7 @@ namespace Fantasy
     class Wizard
     {
         int attackStr = 4;
-        int health = 50;
+        public int health = 50;
         Vector2 position;
         Texture2D image;
         enum wizAttack
@@ -30,11 +30,14 @@ namespace Fantasy
         MouseState oldMouse;
         float timer = 0.0f;
         bool startTimer;
+        SpriteFont font;
 
-        public Wizard()
+        public Wizard(ContentManager content)
         {
             attackStates = wizAttack.none;
             startTimer = false;
+            font = content.Load<SpriteFont>("SpriteFont1");
+            position = new Vector2(0, 0);
         }
 
         public Vector3 Attack(GameTime gameTime)
@@ -98,9 +101,22 @@ namespace Fantasy
             return result;
         }
 
+        public void Damage(int damage)
+        {
+            if (health > 0)
+            {
+                health -= damage;
+            }
+            else
+            {
+                health = 0;
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, position, Color.White);
+            //spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, position, Color.Blue);
         }
     }
 }
