@@ -1,0 +1,6 @@
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Fantasy.exe
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Fantasy.pdb
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.csprojResolveAssemblyReference.cache
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.exe
+C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb

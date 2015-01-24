@@ -18,7 +18,9 @@ namespace Fantasy
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        int example;
+
+        const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
+        byte gameMode = OVERWORLD;
 
         public Game1()
         {
@@ -67,13 +69,32 @@ namespace Fantasy
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
-
-            // TODO: Add your update logic here
-
+            switch (gameMode)
+            {
+                case MAINMENU:
+                    UpdateMainMenu(gameTime);
+                    break;
+                case OVERWORLD:
+                    UpdateOverworld(gameTime);
+                    break;
+                case FIGHTING:
+                    UpdateFighting(gameTime);
+                    break;
+            }
             base.Update(gameTime);
+        }
+
+        ///////////////////////////////
+        //  Update for different states
+        ///////////////////////////////
+        public void UpdateMainMenu(GameTime gametime)
+        {
+        }
+        public void UpdateOverworld(GameTime gametime)
+        {
+        }
+        public void UpdateFighting(GameTime gametime)
+        {
         }
 
         /// <summary>
@@ -82,11 +103,32 @@ namespace Fantasy
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(Color.White);
+            switch (gameMode)
+            {
+                case MAINMENU:
+                    DrawMainMenu();
+                    break;
+                case OVERWORLD:
+                    DrawOverworld();
+                    break;
+                case FIGHTING:
+                    DrawFighting();
+                    break;
+            }
             base.Draw(gameTime);
+        }
+        ///////////////////////////////
+        //  Draw for different states
+        ///////////////////////////////
+        public void DrawMainMenu()
+        {
+        }
+        public void DrawOverworld()
+        {
+        }
+        public void DrawFighting()
+        {
         }
     }
 }
