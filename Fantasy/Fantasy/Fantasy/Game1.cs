@@ -21,6 +21,15 @@ namespace Fantasy
 
         const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
         byte gameMode = OVERWORLD;
+        
+        ///////////////////
+        //Combat Variables
+        ///////////////////
+
+
+        //////////////////////
+        //non combat Variables
+        //////////////////////
 
         public Game1()
         {
