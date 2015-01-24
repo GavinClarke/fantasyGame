@@ -19,6 +19,7 @@ namespace Fantasy
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         KeyboardState currentKeyboardState, previousKeyboardState;
+        Random rnd = new Random();
         const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
         byte gameMode = OVERWORLD;
         
@@ -70,7 +71,8 @@ namespace Fantasy
             // Creating entity player
             camera = new Camera(GraphicsDevice.Viewport, WORLDWIDTH, WORLDHEIGHT);
             entities = new Entity();
-            level = new Level();
+            //level = new Level("Level" + rnd.Next(0,1).ToString());
+            level = new Level("Level1");
             // One Pixel Texture, handy for testing without importing texture
             pixel = new Texture2D(base.GraphicsDevice, 1, 1);
             data = new Color[] { Color.White };
@@ -152,6 +154,7 @@ namespace Fantasy
             if (combat.Update(gametime) == 1)
             {
                 gameMode = DOORS;
+
             }
         }
 
@@ -232,7 +235,7 @@ namespace Fantasy
 
             for (int i = 0; i < 4; i++)
             {
-                if (level.Collision(points[i]))
+                if (level.Collision(points[i]) == 1)
                 {
                     if (entities.GetDirection == 0)
                     {
@@ -246,14 +249,18 @@ namespace Fantasy
                     }
                     else if (entities.GetDirection == 1)
                     {
-                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[2].Y - 1) * TILESIZE);
+                        entities.GetPosition = new Vector2(entities.GetPosition.X, ((points[2].Y - 1) * TILESIZE) +4);
                         entities.SetMoveDown = false;
                     }
                     else if (entities.GetDirection == 3)
                     {
-                        entities.GetPosition = new Vector2((points[3].X - 1) * TILESIZE, entities.GetPosition.Y);
+                        entities.GetPosition = new Vector2(((points[3].X - 1) * TILESIZE) +4, entities.GetPosition.Y);
                         entities.SetMoveRight = false;
                     }
+                }
+                else if (level.Collision(points[i]) == 2)
+                {
+                    gameMode = FIGHTING;
                 }
             }
         }

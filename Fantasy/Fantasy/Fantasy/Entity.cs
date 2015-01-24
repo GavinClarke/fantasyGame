@@ -13,9 +13,9 @@ namespace Fantasy
 {
     class Entity
     {
-        Vector2 position = new Vector2(100,50);
+        Vector2 position = new Vector2(61,271);
         Vector2 centre;
-        int size = 30;
+        int size = 26;
         int speed = 1;
         const byte UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3;
         byte direction = LEFT;
@@ -91,6 +91,12 @@ namespace Fantasy
                 moveUp = true;
             }
         }
+        public void ReloadEnitity()
+        {
+            position = new Vector2(61, 271);
+            direction = RIGHT;
+        }
+
         public Vector2 GetCentre
         { get { return centre; } }
         public Vector2 GetPosition
