@@ -26,7 +26,7 @@ namespace Fantasy
         //Combat Variables
         ///////////////////
         Combat combat;
-
+        Doors doors;
         //////////////////////
         //non combat Variables
         //////////////////////
@@ -66,7 +66,7 @@ namespace Fantasy
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            this.IsMouseVisible = true;
             // Creating entity player
             camera = new Camera(GraphicsDevice.Viewport, WORLDWIDTH, WORLDHEIGHT);
             entities = new Entity();
@@ -75,6 +75,8 @@ namespace Fantasy
             pixel = new Texture2D(base.GraphicsDevice, 1, 1);
             data = new Color[] { Color.White };
             pixel.SetData<Color>(data);
+            combat = new Combat(Content);
+            doors = new Doors(Content);
             base.Initialize();
         }
 
@@ -124,6 +126,9 @@ namespace Fantasy
                 case FIGHTING:
                     UpdateFighting(gameTime);
                     break;
+                case DOORS:
+                    UpdateDoor(gameTime);
+                    break;
             }
             base.Update(gameTime);
         }
@@ -143,7 +148,20 @@ namespace Fantasy
         }
         public void UpdateFighting(GameTime gametime)
         {
-            combat.Update(gametime);
+            if (combat.Update(gametime) == 1)
+            {
+                gameMode = DOORS;
+            }
+        }
+
+        public void UpdateDoor(GameTime gametime)
+        {
+            int n = doors.Update();
+            if (n > 0)
+            {
+                gameMode = FIGHTING;
+                int levelNum = n;
+            }
         }
 
         /// <summary>
@@ -164,6 +182,9 @@ namespace Fantasy
                     break;
                 case FIGHTING:
                     DrawFighting();
+                    break;
+                case DOORS:
+                    DrawDoor();
                     break;
             }
             base.Draw(gameTime);
@@ -187,6 +208,13 @@ namespace Fantasy
         {
             spriteBatch.Begin();
             combat.Draw(spriteBatch);
+            spriteBatch.End();
+        }
+
+        public void DrawDoor()
+        {
+            spriteBatch.Begin();
+            doors.Draw(spriteBatch);
             spriteBatch.End();
         }
 

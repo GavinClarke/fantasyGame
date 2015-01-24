@@ -16,7 +16,7 @@ namespace Fantasy
     {
         int attackStr = 12;
         int defenceStr = 12;
-        int health = 40;
+        public int health = 40;
         Vector2 position;
         Texture2D image;
         SpriteFont font;
@@ -24,7 +24,7 @@ namespace Fantasy
         public Enemy(ContentManager content)
         {
             font = content.Load<SpriteFont>("SpriteFont1");
-            position = new Vector2(600, 300);
+            position = new Vector2(350, 300);
         }
 
         public Vector2  Attack()

@@ -37,7 +37,7 @@ namespace Fantasy
             attackStates = wizAttack.none;
             startTimer = false;
             font = content.Load<SpriteFont>("SpriteFont1");
-            position = new Vector2(0, 0);
+            position = new Vector2(0, 50);
         }
 
         public Vector3 Attack(GameTime gameTime)

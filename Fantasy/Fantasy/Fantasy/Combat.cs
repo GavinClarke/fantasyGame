@@ -36,11 +36,12 @@ namespace Fantasy
             enemy = new Enemy(content);
             warrior = new Warrior(content);
             font = content.Load<SpriteFont>("SpriteFont1");
-            position = new Vector2(350,0);
+            position = new Vector2(150,0);
         }
 
-        public void Update(GameTime gameTime)
+        public int Update(GameTime gameTime)
         {
+            int change = 0;
             if (attacks.wizard == attackOrder)
             {
                 Vector3 damage = wizard.Attack(gameTime);
@@ -81,12 +82,19 @@ namespace Fantasy
                     warrior.Damage((int)result.X);
                     wizard.Damage((int)result.Y);
                     attackOrder = attacks.wizard;
-                    
+                    timer = 0;
                 }
 
                 current = "Enemy attack";
 
             }
+
+            if (enemy.health <= 0)
+            {
+                change = 1;
+            }
+
+            return change;
         }
 
         public void Draw(SpriteBatch spriteBatch)

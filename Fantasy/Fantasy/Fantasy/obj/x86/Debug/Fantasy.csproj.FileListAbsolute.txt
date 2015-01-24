@@ -20,3 +20,5 @@ C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb
