@@ -15,7 +15,6 @@ namespace Fantasy
     {
         Vector2 position = new Vector2(100,50);
         Vector2 centre;
-
         int size = 30;
         int speed = 1;
         const byte UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3;
@@ -28,7 +27,6 @@ namespace Fantasy
         bool moveDown = true;
         bool moveLeft = true;
         bool moveRight = true;
-
         public void Update(KeyboardState keyPress, KeyboardState oldKeyPress, int tileSize)
         {
             // Center of Player needs to be constantly updated for camera to follow the player
@@ -42,12 +40,12 @@ namespace Fantasy
             // Move Character
             Move(keyPress);
         }
-        public void Draw(SpriteBatch spritebatch, Texture2D pixel)
+        public void Draw(SpriteBatch spritebatch, Texture2D playerTex)
         {
-            if (character == WIZARD)
-                spritebatch.Draw(pixel, new Rectangle((int)position.X, (int)position.Y, size, size), Color.Red);
+            if (character == BARBARIAN)
+                spritebatch.Draw(playerTex, new Rectangle((int)position.X, (int)position.Y, size, size), new Rectangle(direction * 128, 0, 128, 128), Color.White);
             else
-                spritebatch.Draw(pixel, new Rectangle((int)position.X, (int)position.Y, size, size), Color.Blue);
+                spritebatch.Draw(playerTex, new Rectangle((int)position.X, (int)position.Y, size, size), new Rectangle(direction * 128, 128, 128, 128), Color.White);
         }
 
         public void SwapCharacters()

@@ -31,7 +31,7 @@ namespace Fantasy
         //non combat Variables
         //////////////////////
 
-        Texture2D pixel, tile;
+        Texture2D pixel, tile, playerTex;
         SpriteFont font;
         Color[] data;
 
@@ -90,7 +90,8 @@ namespace Fantasy
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // Load in font
             font = Content.Load<SpriteFont>("font");
-            tile = Content.Load<Texture2D>("tilemap");
+            tile = Content.Load<Texture2D>("mapTex");
+            playerTex = Content.Load<Texture2D>("playerTex");
             combat = new Combat(Content);
 
             // TODO: use this.Content to load your game content here
@@ -199,7 +200,7 @@ namespace Fantasy
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.GetTranslation);
             level.Draw(spriteBatch, tile);
-            entities.Draw(spriteBatch, pixel);
+            entities.Draw(spriteBatch, playerTex);
             spriteBatch.DrawString(font, "" + entities.GetDirection, new Vector2(100, 100), Color.White);
             // spriteBatch.DrawString(font, "" + entities.GetTilePosition, new Vector2(100, 150), Color.White);
             spriteBatch.End();
@@ -224,10 +225,10 @@ namespace Fantasy
         public void EntityCollision()
         {
             points[0] = new Vector2((int)entities.GetPosition.X / TILESIZE, (int)entities.GetPosition.Y / TILESIZE);
-            points[1] = new Vector2(((int)entities.GetPosition.X + entities.GetSize) / TILESIZE, (int)entities.GetPosition.Y / TILESIZE);
+            points[1] = new Vector2(((int)entities.GetPosition.X - 1 + entities.GetSize) / TILESIZE, (int)entities.GetPosition.Y / TILESIZE);
 
-            points[2] = new Vector2((int)entities.GetPosition.X / TILESIZE, ((int)entities.GetPosition.Y + entities.GetSize) / TILESIZE);
-            points[3] = new Vector2(((int)entities.GetPosition.X + entities.GetSize) / TILESIZE, ((int)entities.GetPosition.Y + entities.GetSize) / TILESIZE);
+            points[2] = new Vector2((int)entities.GetPosition.X / TILESIZE, ((int)entities.GetPosition.Y - 1 + entities.GetSize) / TILESIZE);
+            points[3] = new Vector2(((int)entities.GetPosition.X - 1 + entities.GetSize) / TILESIZE, ((int)entities.GetPosition.Y - 1 + entities.GetSize) / TILESIZE);
 
             for (int i = 0; i < 4; i++)
             {
@@ -235,25 +236,24 @@ namespace Fantasy
                 {
                     if (entities.GetDirection == 0)
                     {
-                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[0].Y + 1) * TILESIZE + 1);
+                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[0].Y + 1) * TILESIZE);
                         entities.SetMoveUp = false;
                     }
                     else if (entities.GetDirection == 2)
                     {
-                        entities.GetPosition = new Vector2((points[0].X + 1) * TILESIZE + 1, entities.GetPosition.Y);
+                        entities.GetPosition = new Vector2((points[0].X + 1) * TILESIZE, entities.GetPosition.Y);
                         entities.SetMoveLeft = false;
                     }
                     else if (entities.GetDirection == 1)
                     {
-                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[2].Y - 1) * TILESIZE - 1);
+                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[2].Y - 1) * TILESIZE);
                         entities.SetMoveDown = false;
                     }
                     else if (entities.GetDirection == 3)
                     {
-                        entities.GetPosition = new Vector2((points[3].X - 1) * TILESIZE - 1, entities.GetPosition.Y);
+                        entities.GetPosition = new Vector2((points[3].X - 1) * TILESIZE, entities.GetPosition.Y);
                         entities.SetMoveRight = false;
                     }
-                    gameMode = FIGHTING;
                 }
             }
         }
