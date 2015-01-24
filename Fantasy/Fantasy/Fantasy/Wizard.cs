@@ -15,7 +15,8 @@ namespace Fantasy
     class Wizard
     {
         int attackStr = 4;
-        public int health = 50;
+        public int health = 25;
+        public int fullHealth = 25;
         Vector2 position;
         Texture2D image;
         enum wizAttack

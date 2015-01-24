@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2015-01-24T15:44:38.8475892+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2015-01-24T12:26:09.4570745+00:00</Time>
     </Item>
     <Item>
       <Source>font.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2015-01-24T15:49:13.1588647+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb</Output>
+      <Time>2015-01-24T16:06:14.1953423+00:00</Time>
     </Item>
     <Item>
       <Source>tilemap.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb</Output>
-      <Time>2015-01-24T15:49:13.1888648+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb</Output>
+      <Time>2015-01-24T16:06:14.2033428+00:00</Time>
     </Item>
     <Item>
       <Source>boss.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\boss.xnb</Output>
-      <Time>2015-01-24T17:10:56.869192+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\boss.xnb</Output>
+      <Time>2015-01-24T16:24:55.2364622+00:00</Time>
     </Item>
     <Item>
       <Source>enemy.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\enemy.xnb</Output>
-      <Time>2015-01-24T17:10:56.8701921+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\enemy.xnb</Output>
+      <Time>2015-01-24T16:36:27.0240302+00:00</Time>
     </Item>
     <Item>
       <Source>warrior.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\warrior.xnb</Output>
-      <Time>2015-01-24T17:10:56.8801927+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\warrior.xnb</Output>
+      <Time>2015-01-24T16:24:55.249463+00:00</Time>
     </Item>
     <Item>
       <Source>wizard.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\wizard.xnb</Output>
-      <Time>2015-01-24T17:10:56.8811927+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\wizard.xnb</Output>
+      <Time>2015-01-24T16:24:55.2544633+00:00</Time>
     </Item>
     <Item>
       <Source>mapTex.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\mapTex.xnb</Output>
-      <Time>2015-01-24T17:34:43.7648058+00:00</Time>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\mapTex.xnb</Output>
+      <Time>2015-01-24T18:52:47.5109273+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -79,10 +79,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\FantasyContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\FantasyContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

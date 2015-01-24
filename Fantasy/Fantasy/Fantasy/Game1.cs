@@ -72,7 +72,7 @@ namespace Fantasy
             camera = new Camera(GraphicsDevice.Viewport, WORLDWIDTH, WORLDHEIGHT);
             entities = new Entity();
             //level = new Level("Level" + rnd.Next(0,1).ToString());
-            level = new Level("Level1");
+            level = new Level("Level0");
             // One Pixel Texture, handy for testing without importing texture
             pixel = new Texture2D(base.GraphicsDevice, 1, 1);
             data = new Color[] { Color.White };
@@ -163,8 +163,9 @@ namespace Fantasy
             int n = doors.Update();
             if (n > 0)
             {
-                gameMode = FIGHTING;
-                int levelNum = n;
+                gameMode = OVERWORLD;
+                level = new Level("Level" + n);
+                entities.ReloadEnitity();
             }
         }
 

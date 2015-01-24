@@ -30,3 +30,4 @@ C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Microso
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.exe
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\mapTex.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\mapTex.xnb

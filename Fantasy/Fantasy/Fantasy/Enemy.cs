@@ -17,6 +17,7 @@ namespace Fantasy
         int attackStr = 12;
         int defenceStr = 12;
         public int health = 40;
+        public int fullHealth = 40;
         Vector2 position;
         Texture2D image;
         SpriteFont font;

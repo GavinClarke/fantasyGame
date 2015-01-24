@@ -15,7 +15,8 @@ namespace Fantasy
     class Warrior
     {
         int attackStr = 20;
-        public int health = 30;
+        public int health = 50;
+        public int fullHealth = 50;
         Vector2 position;
         Texture2D image;
         SpriteFont font;

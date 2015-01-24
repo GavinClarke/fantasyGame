@@ -24,9 +24,9 @@ namespace Fantasy
 
         public Doors(ContentManager content)
         {
-            DoorOne = new Button(new Rectangle(175, 0, 100, 300),"DoorOne",content);
-            DoorTwo = new Button(new Rectangle(325, 0, 100, 300), "DoorTwo", content);
-            DoorThree = new Button(new Rectangle(475, 0, 100, 300), "DoorThree", content);
+            DoorOne = new Button(new Rectangle(75, 0, 100, 300),"DoorOne",content);
+            DoorTwo = new Button(new Rectangle(200, 0, 100, 300), "DoorTwo", content);
+            DoorThree = new Button(new Rectangle(325, 0, 100, 300), "DoorThree", content);
             randNum = new Random();
             font = content.Load<SpriteFont>("SpriteFont1");
         }
@@ -36,15 +36,15 @@ namespace Fantasy
             newRoom = 0;
             if (DoorOne.CheckMouseClick())
             {
-                newRoom = randNum.Next(1, 10);
+                newRoom = 1;// randNum.Next(0, 1);
             }
             else if (DoorTwo.CheckMouseClick())
             {
-                newRoom = randNum.Next(1, 10);
+                newRoom = 1;// randNum.Next(0, 1);
             }
             else if (DoorThree.CheckMouseClick())
             {
-                newRoom = randNum.Next(1, 10);
+                newRoom = 1;//randNum.Next(0, 1);
             }
             return newRoom;
         }

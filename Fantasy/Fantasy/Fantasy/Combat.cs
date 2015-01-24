@@ -92,6 +92,8 @@ namespace Fantasy
             if (enemy.health <= 0)
             {
                 change = 1;
+                enemy.health = enemy.fullHealth;
+
             }
 
             return change;
