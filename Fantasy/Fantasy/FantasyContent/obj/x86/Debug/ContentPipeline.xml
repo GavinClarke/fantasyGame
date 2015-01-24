@@ -73,6 +73,15 @@
       <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\mapTex.xnb</Output>
       <Time>2015-01-24T18:52:47.5109273+00:00</Time>
     </Item>
+    <Item>
+      <Source>doors.png</Source>
+      <Name>doors</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\doors.xnb</Output>
+      <Time>2015-01-24T20:17:50.7048133+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

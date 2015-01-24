@@ -21,7 +21,7 @@ namespace Fantasy
         KeyboardState currentKeyboardState, previousKeyboardState;
         Random rnd = new Random();
         const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
-        byte gameMode = OVERWORLD;
+        byte gameMode = DOORS;
         
         ///////////////////
         //Combat Variables

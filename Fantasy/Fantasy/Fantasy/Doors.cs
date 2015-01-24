@@ -18,15 +18,18 @@ namespace Fantasy
         Button DoorTwo;
         Button DoorThree;
 
+        Texture2D Door;
+
         Random randNum;
         SpriteFont font;
         int newRoom = 0;
 
         public Doors(ContentManager content)
         {
-            DoorOne = new Button(new Rectangle(75, 0, 100, 300),"DoorOne",content);
-            DoorTwo = new Button(new Rectangle(200, 0, 100, 300), "DoorTwo", content);
-            DoorThree = new Button(new Rectangle(325, 0, 100, 300), "DoorThree", content);
+            DoorOne = new Button(new Rectangle(27, 225, 100, 300),"DoorOne",content);
+            DoorTwo = new Button(new Rectangle(190, 225, 100, 300), "DoorTwo", content);
+            DoorThree = new Button(new Rectangle(350, 225, 100, 300), "DoorThree", content);
+            Door = content.Load<Texture2D>("doors");
             randNum = new Random();
             font = content.Load<SpriteFont>("SpriteFont1");
         }
@@ -52,10 +55,12 @@ namespace Fantasy
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            
             DoorOne.Draw(spriteBatch);
             DoorTwo.Draw(spriteBatch);
             DoorThree.Draw(spriteBatch);
-            spriteBatch.DrawString(font, "Room: " + newRoom, new Vector2(350, 400), Color.Red);
+            spriteBatch.Draw(Door, new Vector2(0, 0), Color.White);
+            //spriteBatch.DrawString(font, "Room: " + newRoom, new Vector2(350, 400), Color.Red);
         }
 
 
