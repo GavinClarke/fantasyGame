@@ -20,12 +20,12 @@ namespace Fantasy
         SpriteBatch spriteBatch;
 
         const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
-        byte gameMode = OVERWORLD;
+        byte gameMode = FIGHTING;
         
         ///////////////////
         //Combat Variables
         ///////////////////
-
+        Combat combat;
 
         //////////////////////
         //non combat Variables
@@ -58,7 +58,7 @@ namespace Fantasy
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            combat = new Combat(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -104,6 +104,7 @@ namespace Fantasy
         }
         public void UpdateFighting(GameTime gametime)
         {
+            combat.Update(gametime);
         }
 
         /// <summary>
@@ -138,6 +139,7 @@ namespace Fantasy
         }
         public void DrawFighting()
         {
+            combat.Draw(spriteBatch);
         }
     }
 }

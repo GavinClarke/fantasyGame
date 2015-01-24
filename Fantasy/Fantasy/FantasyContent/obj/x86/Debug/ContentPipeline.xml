@@ -7,10 +7,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\FantasyContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\FantasyContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

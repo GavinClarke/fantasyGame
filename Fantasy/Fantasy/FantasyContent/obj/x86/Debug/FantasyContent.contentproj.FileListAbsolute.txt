@@ -1,1 +1,2 @@
 C:\Users\gamejam\Desktop\GamesJam\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\FantasyContent.contentprojResolveAssemblyReference.cache
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\FantasyContent\obj\x86\Debug\FantasyContent.contentprojResolveAssemblyReference.cache
