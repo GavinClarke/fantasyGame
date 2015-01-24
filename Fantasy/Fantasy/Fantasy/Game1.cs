@@ -18,6 +18,7 @@ namespace Fantasy
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        int example;
 
         public Game1()
         {
