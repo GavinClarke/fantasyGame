@@ -12,7 +12,7 @@ namespace Fantasy
         Viewport viewport;          // Player viewport
         Matrix transform;           // Transform Matrix
         Vector3 minCameraDistance;  // Minimum Distance before camera stop scrolling
-        const float ZOOM = 1;       // Camera Zoom
+        const float ZOOM = 2;       // Camera Zoom
         int width;                  // Width of Level
         int height;                 // Height of Level
 

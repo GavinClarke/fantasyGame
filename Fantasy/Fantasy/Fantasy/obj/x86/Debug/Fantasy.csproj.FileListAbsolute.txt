@@ -11,3 +11,12 @@ C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Microsoft.X
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.exe
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Fantasy.exe
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Fantasy.pdb
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.csprojResolveAssemblyReference.cache
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.exe
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\obj\x86\Debug\Fantasy.pdb
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb
+C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb

@@ -18,9 +18,9 @@ namespace Fantasy
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        KeyboardState currentKeyboardState, previousKeyboardState;
         const byte MAINMENU = 0, OVERWORLD = 1, FIGHTING = 2, DOORS = 4, ETC = 3;
-        byte gameMode = FIGHTING;
+        byte gameMode = OVERWORLD;
         
         ///////////////////
         //Combat Variables
@@ -31,10 +31,30 @@ namespace Fantasy
         //non combat Variables
         //////////////////////
 
+        Texture2D pixel, tile;
+        SpriteFont font;
+        Color[] data;
+
+        ///////////////////
+        // Overworld Variables
+        Camera camera;
+        Entity entities;
+        Level level;
+        const int TILESIZE = 30;
+        // Size of the World/Level in Pixels.
+        // Does not effect screensize.
+        const int WORLDWIDTH = 720;
+        const int WORLDHEIGHT = 720;
+        Vector2[] points = new Vector2[4];
+        ///////////////////
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 480;
+            graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
+            graphics.IsFullScreen = false;
         }
 
         /// <summary>
@@ -47,6 +67,14 @@ namespace Fantasy
         {
             // TODO: Add your initialization logic here
 
+            // Creating entity player
+            camera = new Camera(GraphicsDevice.Viewport, WORLDWIDTH, WORLDHEIGHT);
+            entities = new Entity();
+            level = new Level();
+            // One Pixel Texture, handy for testing without importing texture
+            pixel = new Texture2D(base.GraphicsDevice, 1, 1);
+            data = new Color[] { Color.White };
+            pixel.SetData<Color>(data);
             base.Initialize();
         }
 
@@ -58,7 +86,11 @@ namespace Fantasy
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            // Load in font
+            font = Content.Load<SpriteFont>("font");
+            tile = Content.Load<Texture2D>("tilemap");
             combat = new Combat(Content);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -78,6 +110,9 @@ namespace Fantasy
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            // Keyboard Update
+            previousKeyboardState = currentKeyboardState;
+            currentKeyboardState = Keyboard.GetState();
             switch (gameMode)
             {
                 case MAINMENU:
@@ -101,6 +136,10 @@ namespace Fantasy
         }
         public void UpdateOverworld(GameTime gametime)
         {
+            entities.Update(currentKeyboardState, previousKeyboardState, TILESIZE);
+            camera.Update(entities.GetCentre);
+            EntityCollision();
+
         }
         public void UpdateFighting(GameTime gametime)
         {
@@ -114,7 +153,7 @@ namespace Fantasy
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
-            spriteBatch.Begin();
+            
             switch (gameMode)
             {
                 case MAINMENU:
@@ -127,7 +166,6 @@ namespace Fantasy
                     DrawFighting();
                     break;
             }
-            spriteBatch.End();
             base.Draw(gameTime);
         }
         ///////////////////////////////
@@ -138,10 +176,58 @@ namespace Fantasy
         }
         public void DrawOverworld()
         {
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.GetTranslation);
+            level.Draw(spriteBatch, tile);
+            entities.Draw(spriteBatch, pixel);
+            spriteBatch.DrawString(font, "" + entities.GetDirection, new Vector2(100, 100), Color.White);
+            // spriteBatch.DrawString(font, "" + entities.GetTilePosition, new Vector2(100, 150), Color.White);
+            spriteBatch.End();
         }
         public void DrawFighting()
         {
+            spriteBatch.Begin();
             combat.Draw(spriteBatch);
+            spriteBatch.End();
+        }
+
+        ///////////////////////////////
+        //  Entity Collision with Walls
+        ///////////////////////////////
+        public void EntityCollision()
+        {
+            points[0] = new Vector2((int)entities.GetPosition.X / TILESIZE, (int)entities.GetPosition.Y / TILESIZE);
+            points[1] = new Vector2(((int)entities.GetPosition.X + entities.GetSize) / TILESIZE, (int)entities.GetPosition.Y / TILESIZE);
+
+            points[2] = new Vector2((int)entities.GetPosition.X / TILESIZE, ((int)entities.GetPosition.Y + entities.GetSize) / TILESIZE);
+            points[3] = new Vector2(((int)entities.GetPosition.X + entities.GetSize) / TILESIZE, ((int)entities.GetPosition.Y + entities.GetSize) / TILESIZE);
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (level.Collision(points[i]))
+                {
+                    if (entities.GetDirection == 0)
+                    {
+                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[0].Y + 1) * TILESIZE + 1);
+                        entities.SetMoveUp = false;
+                    }
+                    else if (entities.GetDirection == 2)
+                    {
+                        entities.GetPosition = new Vector2((points[0].X + 1) * TILESIZE + 1, entities.GetPosition.Y);
+                        entities.SetMoveLeft = false;
+                    }
+                    else if (entities.GetDirection == 1)
+                    {
+                        entities.GetPosition = new Vector2(entities.GetPosition.X, (points[2].Y - 1) * TILESIZE - 1);
+                        entities.SetMoveDown = false;
+                    }
+                    else if (entities.GetDirection == 3)
+                    {
+                        entities.GetPosition = new Vector2((points[3].X - 1) * TILESIZE - 1, entities.GetPosition.Y);
+                        entities.SetMoveRight = false;
+                    }
+                    gameMode = FIGHTING;
+                }
+            }
         }
     }
 }
