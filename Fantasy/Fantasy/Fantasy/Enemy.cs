@@ -24,6 +24,7 @@ namespace Fantasy
         public Enemy(ContentManager content)
         {
             font = content.Load<SpriteFont>("SpriteFont1");
+            image = content.Load<Texture2D>("enemy");
             position = new Vector2(350, 300);
         }
 
@@ -69,8 +70,8 @@ namespace Fantasy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //spriteBatch.Draw(image, position, Color.White);
-            spriteBatch.DrawString(font, "Health: " + health, position, Color.Red);
+            spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, new Vector2(position.X, position.Y - 15), Color.Red);
         }
 
 

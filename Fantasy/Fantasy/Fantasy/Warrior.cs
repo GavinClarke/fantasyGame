@@ -23,6 +23,7 @@ namespace Fantasy
         public Warrior(ContentManager content)
         {
             font = content.Load<SpriteFont>("SpriteFont1");
+            image = content.Load<Texture2D>("warrior");
             position = new Vector2(0, 300);
         }
 
@@ -49,8 +50,8 @@ namespace Fantasy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //spriteBatch.Draw(image, position, Color.White);
-            spriteBatch.DrawString(font, "Health: " + health, position, Color.Green);
+            spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, new Vector2(position.X,position.Y - 15), Color.Green);
         }
     }
 }

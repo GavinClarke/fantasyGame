@@ -22,3 +22,7 @@ C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content
 C:\Users\gamejam\Desktop\GamesJam2\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\font.xnb
 C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\boss.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\enemy.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\warrior.xnb
+C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\wizard.xnb

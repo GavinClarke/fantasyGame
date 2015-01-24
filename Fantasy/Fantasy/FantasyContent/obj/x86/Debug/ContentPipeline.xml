@@ -28,6 +28,42 @@
       <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\tilemap.xnb</Output>
       <Time>2015-01-24T16:06:14.2033428+00:00</Time>
     </Item>
+    <Item>
+      <Source>boss.png</Source>
+      <Name>boss</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\boss.xnb</Output>
+      <Time>2015-01-24T16:24:55.2364622+00:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy.png</Source>
+      <Name>enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\enemy.xnb</Output>
+      <Time>2015-01-24T16:36:27.0240302+00:00</Time>
+    </Item>
+    <Item>
+      <Source>warrior.png</Source>
+      <Name>warrior</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\warrior.xnb</Output>
+      <Time>2015-01-24T16:24:55.249463+00:00</Time>
+    </Item>
+    <Item>
+      <Source>wizard.png</Source>
+      <Name>wizard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gavin\Desktop\gamejam\Fantasy\Fantasy\Fantasy\bin\x86\Debug\Content\wizard.xnb</Output>
+      <Time>2015-01-24T16:24:55.2544633+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

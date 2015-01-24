@@ -37,6 +37,7 @@ namespace Fantasy
             attackStates = wizAttack.none;
             startTimer = false;
             font = content.Load<SpriteFont>("SpriteFont1");
+            image = content.Load<Texture2D>("wizard");
             position = new Vector2(0, 50);
         }
 
@@ -115,8 +116,8 @@ namespace Fantasy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //spriteBatch.Draw(image, position, Color.White);
-            spriteBatch.DrawString(font, "Health: " + health, position, Color.Blue);
+            spriteBatch.Draw(image, position, Color.White);
+            spriteBatch.DrawString(font, "Health: " + health, new Vector2(position.X, position.Y - 15), Color.Blue);
         }
     }
 }
