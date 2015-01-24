@@ -238,25 +238,13 @@ namespace Fantasy
                 if (level.Collision(points[i]) == 1)
                 {
                     if (entities.GetDirection == 0)
-                    {
                         entities.GetPosition = new Vector2(entities.GetPosition.X, (points[0].Y + 1) * TILESIZE);
-                        entities.SetMoveUp = false;
-                    }
                     else if (entities.GetDirection == 2)
-                    {
                         entities.GetPosition = new Vector2((points[0].X + 1) * TILESIZE, entities.GetPosition.Y);
-                        entities.SetMoveLeft = false;
-                    }
                     else if (entities.GetDirection == 1)
-                    {
                         entities.GetPosition = new Vector2(entities.GetPosition.X, ((points[2].Y - 1) * TILESIZE) +4);
-                        entities.SetMoveDown = false;
-                    }
                     else if (entities.GetDirection == 3)
-                    {
                         entities.GetPosition = new Vector2(((points[3].X - 1) * TILESIZE) +4, entities.GetPosition.Y);
-                        entities.SetMoveRight = false;
-                    }
                 }
                 else if (level.Collision(points[i]) == 2)
                 {

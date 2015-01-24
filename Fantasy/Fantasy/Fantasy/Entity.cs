@@ -58,37 +58,25 @@ namespace Fantasy
 
         public void Move(KeyboardState keyPress)
         {
-            if (keyPress.IsKeyDown(Keys.W)  == true && moveUp)
+            if (keyPress.IsKeyDown(Keys.W))
             {
                 position.Y -= speed;
                 direction = UP;
-                moveLeft = true;
-                moveRight = true;
-                moveDown = true;
             }
-            else if (keyPress.IsKeyDown(Keys.D) && moveRight)
+            else if (keyPress.IsKeyDown(Keys.D))
             {
                 position.X += speed;
                 direction = RIGHT;
-                moveLeft = true;
-                moveUp = true;
-                moveDown = true;
             }
-            else if (keyPress.IsKeyDown(Keys.A) && moveLeft)
+            else if (keyPress.IsKeyDown(Keys.A))
             {
                 position.X -= speed;
                 direction = LEFT;
-                moveRight = true;
-                moveUp = true;
-                moveDown = true;
             }
-            else if (keyPress.IsKeyDown(Keys.S) && moveDown)
+            else if (keyPress.IsKeyDown(Keys.S))
             {
                 position.Y += speed;
                 direction = DOWN;
-                moveLeft = true;
-                moveRight = true;
-                moveUp = true;
             }
         }
         public void ReloadEnitity()
@@ -106,13 +94,5 @@ namespace Fantasy
         public int GetSize
         { get { return size; } }
 
-        public bool SetMoveUp
-        { set { moveUp = value; } }
-        public bool SetMoveDown
-        { set { moveDown = value; } }
-        public bool SetMoveLeft
-        { set { moveLeft = value; } }
-        public bool SetMoveRight
-        { set { moveRight = value; } }
     }
 }
